@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1440.0" style="-fx-background-color: grey" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.AppController">
+   <children>
+      <MenuBar layoutY="2.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#saveFile" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#openFile" text="Open" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ImageView id="GateSelection" fx:id="andGateSelection" fitHeight="25.0" fitWidth="25.0" layoutX="203.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/gates/AND.png" />
+         </image></ImageView>
+      <ImageView id="GateSelection" fx:id="orGateSelection" fitHeight="25.0" fitWidth="25.0" layoutX="228.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/gates/OR.png" />
+         </image>
+      </ImageView>
+      <ImageView id="GateSelection" fitHeight="25.0" fitWidth="25.0" layoutX="253.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" fx:id="xorGateSelection">
+         <image>
+            <Image url="@images/gates/XOR.png" />
+         </image>
+      </ImageView>
+      <ImageView id="GateSelection" fx:id="nandGateSelection" fitHeight="25.0" fitWidth="25.0" layoutX="278.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/gates/NAND.png" />
+         </image>
+      </ImageView>
+      <ImageView id="GateSelection" fx:id="norGateSelection" fitHeight="25.0" fitWidth="25.0" layoutX="303.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/gates/NOR.png" />
+         </image>
+      </ImageView>
+      <ImageView id="GateSelection" fitHeight="25.0" fitWidth="25.0" layoutX="328.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" fx:id="xnorGateSelection">
+         <image>
+            <Image url="@images/gates/XNOR.png" />
+         </image>
+      </ImageView>
+      <ImageView id="GateSelection" fx:id="powerGateSelection" fitHeight="25.0" fitWidth="25.0" layoutX="132.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/gates/NPOWER.png" />
+         </image>
+      </ImageView>
+      <ImageView id="GateSelection" fx:id="notGateSelection" fitHeight="25.0" fitWidth="25.0" layoutX="178.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/gates/NOT.png" />
+         </image>
+      </ImageView>
+       <ImageView id="GateSelection" fx:id="outputGateSelection" fitHeight="25.0" fitWidth="25.0" layoutX="155.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@images/gates/!OUTPUT.png" />
+           </image>
+       </ImageView>
+       <Canvas fx:id="canvas" height="765.0" layoutY="40.0" width="1133.0" />
+       <TextField fx:id="inputsField" layoutX="1133.0" layoutY="172.0" onAction="#changeInputs" prefHeight="25.0" prefWidth="294.0" visible="false" />
+       <Label fx:id="showNumOfInputs" layoutX="1138.0" layoutY="147.0" prefHeight="25.0" prefWidth="294.0" text="Number of Inputs:" visible="false" />
+       <TextField fx:id="inputField" layoutX="1136.0" layoutY="243.0" onAction="#changeConnections" prefHeight="25.0" prefWidth="294.0" visible="false" />
+       <Label fx:id="showInputs" layoutX="1141.0" layoutY="218.0" prefHeight="25.0" prefWidth="294.0" text="Inputs:" visible="false" />
+       <Label fx:id="gateID" layoutX="1138.0" layoutY="112.0" text="Gate ID:" visible="false" />
+       <CheckBox fx:id="powerBox" layoutX="1253.0" layoutY="112.0" mnemonicParsing="false" onAction="#onPower" text="Power" visible="false" />
+       <Button fx:id="moveButton" layoutX="1315.0" layoutY="108.0" mnemonicParsing="false" onAction="#moveGate" text="Move" visible="false" />
+      <Button fx:id="deleteButton" layoutX="1367.0" layoutY="108.0" mnemonicParsing="false" onAction="#deleteGate" text="Delete" visible="false" />
+   </children>
+</Pane>
